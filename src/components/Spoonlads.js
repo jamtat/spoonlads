@@ -1,9 +1,14 @@
 import React from 'react'
 
+import Loading from './Loading'
 
 class Spoonlads extends React.Component {
 	render() {
-		return 'noice'
+		return (
+			<main>
+				<Loading/>
+			</main>
+		)
 	}
 }
 
