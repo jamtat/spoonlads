@@ -23,7 +23,7 @@ class Ticker extends React.Component {
 	interval = null
 
 	componentDidMount() {
-		setInterval( this.updateIndex, 500 )
+		this.interval = setInterval( this.updateIndex, 500 )
 	}
 
 	componentWillUnmount() {
