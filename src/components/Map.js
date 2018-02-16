@@ -22,6 +22,8 @@ const DEFAULT_LOCATION = {
 
 const DEFAULT_ZOOM = 6
 
+let lastZoom = DEFAULT_ZOOM
+
 const Map = withGoogleMap( ( {
 		location,
 		zoom,
@@ -35,18 +37,22 @@ const Map = withGoogleMap( ( {
 	location = location || DEFAULT_LOCATION
 	zoom = zoom || DEFAULT_ZOOM
 
-	console.log( pubs )
-
-	console.log( onPubClick )
-
 	const markers = pubs.map( pub => markerFromPub( pub, onPubClick ) )
+	console.log( 'location', location )
 
-	console.log( zoom, location )
+	const viewParams = zoom !== lastZoom && location !== DEFAULT_LOCATION? {
+		zoom,
+		center: location
+	}: null
+
+	if ( viewParams )
+		lastZoom = zoom
 
 	return (
 		<GoogleMap
-			zoom={ zoom }
-			center={ location }>
+			{...viewParams}
+			defaultZoom={ zoom }
+			defaultCenter={ location }>
 			{ markers }
 			<PersonalMarker location={ location } />
 		</GoogleMap>

@@ -10,11 +10,19 @@ class Spoonlads extends React.Component {
 		error: null,
 		pubs: null,
 		facilities: null,
+		chosenPub: null,
 		location: null
 	}
 
+	positionWatcher = null
+
 	componentDidMount() {
 		this.fetchData()
+	}
+
+	componentWillUnmount() {
+		if ( this.positionWatcher )
+			window.navigator.geolocation.clearWatch( this.positionWatcher )
 	}
 
 	async fetchData() {
@@ -53,10 +61,23 @@ class Spoonlads extends React.Component {
 		}
 	} )
 
+	setPub = pub => this.setState( {
+		chosenPub: pub
+	} )
+
 	async fetchLocation() {
 		window.navigator.geolocation.getCurrentPosition( position => {
 			console.log( position )
 			this.setPosition( position )
+
+			this.positionWatcher = window.navigator.geolocation.watchPosition( potision => {
+				console.log( position )
+				this.setPosition( position )
+			}, err => console.error( err ), {
+				enableHighAccuracy: true
+			} )
+		}, err => console.error( err ), {
+			enableHighAccuracy: true
 		} )
 	}
 
@@ -66,7 +87,8 @@ class Spoonlads extends React.Component {
 			error,
 			pubs,
 			facilities,
-			location
+			location,
+			chosenPub
 		} = this.state
 
 		if ( error ) {
@@ -87,14 +109,17 @@ class Spoonlads extends React.Component {
 			)
 		}
 
+		if ( chosenPub )
+			console.log( chosenPub )
+
 		return (
 			<main>
 				<Map
 					pubs={ pubs }
 					facilities={ facilities }
 					location={ location }
-					onPubClick={ pub => console.log( pub ) }
-					zoom={ location ? 11 : undefined } />
+					onPubClick={ this.setPub }
+					zoom={ location ? 12 : undefined } />
 			</main>
 		)
 	}
