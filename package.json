@@ -1,0 +1,17 @@
+{
+  "name": "spoons",
+  "version": "0.0.1",
+  "description": "An interactive map to find your nearest spoons",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "^1.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start"
+  },
+  "author": "Ben Tattersley (ubershinysheep@gmail.com)",
+  "license": "UNLICENSED"
+}
