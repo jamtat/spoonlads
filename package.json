@@ -6,12 +6,19 @@
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-google-maps": "^9.4.5",
     "react-scripts": "^1.1.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "esformatter": "^0.10.0",
+    "esformatter-jsx": "^7.4.0",
+    "esformatter-quotes": "^1.1.0",
+    "eslint": "^4.17.0"
+  },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "lint": "eslint src/**/*.js"
   },
   "author": "Ben Tattersley (ubershinysheep@gmail.com)",
   "license": "UNLICENSED"
