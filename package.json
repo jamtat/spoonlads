@@ -10,7 +10,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   },
   "author": "Ben Tattersley (ubershinysheep@gmail.com)",
   "license": "UNLICENSED"
