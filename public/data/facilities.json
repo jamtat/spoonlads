@@ -1,74 +1,20 @@
-[
-  {
-    "id": "4c180c61-d14d-4226-b5dd-e0e85a3b4dcb",
-    "label": "Order and Pay"
-  },
-  {
-    "id": "7c88354c-8e4d-4d37-b48a-e1fa9e3807cb",
-    "label": "Changing Places"
-  },
-  {
-    "id": "8cd702fc-04be-4fc7-9d23-f97eb0b41018",
-    "label": "Accommodation"
-  },
-  {
-    "id": "e1f51181-ff74-4409-a2fd-0dd19d98f3ee",
-    "label": "Airport Pub"
-  },
-  {
-    "id": "e7c8ea12-87d8-4e57-908c-5c51b96e17a6",
-    "label": "Broadcasts Live News"
-  },
-  {
-    "id": "a832906f-2d1f-45a7-a5da-c13db5da3bbc",
-    "label": "Children Welcome"
-  },
-  {
-    "id": "6aecbccd-6f6b-443e-ad44-b300f657b154",
-    "label": "Meeting Facilities"
-  },
-  {
-    "id": "1d6c3d88-5493-4eef-8ccf-a0744613462f",
-    "label": "TV Screens"
-  },
-  {
-    "id": "5f0dcbe3-7f2a-4413-8b01-5cdffd8b70e5",
-    "label": "Racing UK"
-  },
-  {
-    "id": "d87d2a33-b474-4cc4-bdbe-bee04c1e3d88",
-    "label": "Step Free Access"
-  },
-  {
-    "id": "688cbbb5-2e06-4136-916f-026761b15a98",
-    "label": "Airport Pub Air Side"
-  },
-  {
-    "id": "4f59bb6d-cccb-42ef-a375-ad339db129e4",
-    "label": "Airport Pub Land Side"
-  },
-  {
-    "id": "88b5dc2c-3b6a-4679-81b4-dc3dccfddf88",
-    "label": "BT Sport"
-  },
-  {
-    "id": "cc17ea7d-4f14-4fa0-80f6-57066f5d24aa",
-    "label": "Sky Sports"
-  },
-  {
-    "id": "de34371d-eb16-4d25-a506-8d7f4f60b7ad",
-    "label": "Room Hire"
-  },
-  {
-    "id": "70e271c2-d043-402f-b42d-740a860b954f",
-    "label": "Baby Change"
-  },
-  {
-    "id": "fe64d5b3-c8ba-4260-9d7f-03f3986beabe",
-    "label": "Wifi"
-  },
-  {
-    "id": "b19da275-0f4d-4e01-81d2-d7f554dbfd72",
-    "label": "Licensed Outside Area"
-  }
-]
+{
+  "4c180c61-d14d-4226-b5dd-e0e85a3b4dcb": "Order and Pay",
+  "7c88354c-8e4d-4d37-b48a-e1fa9e3807cb": "Changing Places",
+  "8cd702fc-04be-4fc7-9d23-f97eb0b41018": "Accommodation",
+  "e1f51181-ff74-4409-a2fd-0dd19d98f3ee": "Airport Pub",
+  "e7c8ea12-87d8-4e57-908c-5c51b96e17a6": "Broadcasts Live News",
+  "a832906f-2d1f-45a7-a5da-c13db5da3bbc": "Children Welcome",
+  "6aecbccd-6f6b-443e-ad44-b300f657b154": "Meeting Facilities",
+  "1d6c3d88-5493-4eef-8ccf-a0744613462f": "TV Screens",
+  "5f0dcbe3-7f2a-4413-8b01-5cdffd8b70e5": "Racing UK",
+  "d87d2a33-b474-4cc4-bdbe-bee04c1e3d88": "Step Free Access",
+  "688cbbb5-2e06-4136-916f-026761b15a98": "Airport Pub Air Side",
+  "4f59bb6d-cccb-42ef-a375-ad339db129e4": "Airport Pub Land Side",
+  "88b5dc2c-3b6a-4679-81b4-dc3dccfddf88": "BT Sport",
+  "cc17ea7d-4f14-4fa0-80f6-57066f5d24aa": "Sky Sports",
+  "de34371d-eb16-4d25-a506-8d7f4f60b7ad": "Room Hire",
+  "70e271c2-d043-402f-b42d-740a860b954f": "Baby Change",
+  "fe64d5b3-c8ba-4260-9d7f-03f3986beabe": "Wifi",
+  "b19da275-0f4d-4e01-81d2-d7f554dbfd72": "Licensed Outside Area"
+}
