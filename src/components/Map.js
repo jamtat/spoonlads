@@ -53,19 +53,19 @@ const Map = withGoogleMap( ( {
 	)
 } )
 
-const PERSONAL_MARKER_PATH_OPTIONS = {
+const PERSONAL_MARKER_PATH_OPTIONS = () => ({
 	path: window.google.maps.SymbolPath.CIRCLE,
 	scale: 7,
 	fillOpacity: 1,
 	fillColor: '#4286f4',
 	strokeColor: 'white',
 	strokeWeight: 2
-}
+})
 
 const PersonalMarker = ( { location } ) => location !== null && location !== DEFAULT_LOCATION? (
 	<Marker
 		position={ location }
-		icon={ PERSONAL_MARKER_PATH_OPTIONS } />
+		icon={ PERSONAL_MARKER_PATH_OPTIONS() } />
 	) : null
 
 const MapContainer = ( props ) => {
