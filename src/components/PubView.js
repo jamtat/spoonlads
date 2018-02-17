@@ -19,10 +19,16 @@ const PubView = ( { pub, location, detail, onClose } ) => {
 
 	const distance = computeDistanceToPub( location, pub )
 
-	console.log( detail )
+	const image = detail.images && detail.images[ 0 ]? detail.images[ 0 ]: ''
 
 	return (
 		<div className='pub-view'>
+			<div className='pub-view-image-container'>
+				<div
+					className='pub-view-image'
+					style={ { backgroundImage: `url(${image})` } }>
+				</div>
+			</div>
 			<div className='pub-view-left'>
 				<div className='pub-view-name'>
 					{ pub.name }
