@@ -1,5 +1,5 @@
 import React from 'react'
-import { GoogleMap, Marker, Circle, withGoogleMap } from 'react-google-maps'
+import { GoogleMap, Marker, Polyline, withGoogleMap } from 'react-google-maps'
 import './Map.css'
 
 const locationFromPub = ( { lat, lng } ) => ({
@@ -7,7 +7,7 @@ const locationFromPub = ( { lat, lng } ) => ({
 	lng
 })
 
-const markerFromPub = ( pub, onPubClick ) => (
+const markerFromPub = ( pub, selected, onPubClick ) => (
 	<Marker
 		key={ pub.id }
 		title={ pub.name }
@@ -30,14 +30,14 @@ const Map = withGoogleMap( ( {
 		pubs = {
 			regions: []
 		},
-		facilities = {},
+		chosenPub,
 		onPubClick
 	} ) => {
 
 	location = location || DEFAULT_LOCATION
 	zoom = zoom || DEFAULT_ZOOM
 
-	const markers = pubs.map( pub => markerFromPub( pub, onPubClick ) )
+	const markers = pubs.map( pub => markerFromPub( pub, pub === chosenPub, onPubClick ) )
 	console.log( 'location', location )
 
 	const viewParams = zoom !== lastZoom && location !== DEFAULT_LOCATION? {
@@ -53,8 +53,11 @@ const Map = withGoogleMap( ( {
 			{...viewParams}
 			defaultZoom={ zoom }
 			defaultCenter={ location }>
-			{ markers }
 			<PersonalMarker location={ location } />
+			<PubMarker
+				location={ location }
+				pub={ chosenPub } />
+			{ markers }
 		</GoogleMap>
 	)
 } )
@@ -73,6 +76,21 @@ const PersonalMarker = ( { location } ) => location !== null && location !== DEF
 		position={ location }
 		icon={ PERSONAL_MARKER_PATH_OPTIONS() } />
 	) : null
+
+const PubMarker = ( { location, pub } ) => {
+	const shouldDraw = location && location !== DEFAULT_LOCATION && pub
+	if ( !shouldDraw )
+		return null
+
+	const path = [
+		location,
+		locationFromPub( pub )
+	]
+
+	return (
+		<Polyline path={ path } />
+	)
+}
 
 const MapContainer = ( props ) => {
 	const container = (

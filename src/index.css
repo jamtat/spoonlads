@@ -8,11 +8,12 @@ html, body, #root {
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+	font-size: 14px;
+
 }
 
 body {
 	font-family: Montserrat, sans-serif;
-	font-size: 14px;
 	color: #222222;
 }
 

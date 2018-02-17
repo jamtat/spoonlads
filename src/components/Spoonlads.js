@@ -1,8 +1,9 @@
 import React from 'react'
+import { timer, flattenPubs } from '../lib/utils'
 
 import Loading from './Loading'
 import Map from './Map'
-import { timer, flattenPubs } from '../lib/utils'
+import PubView from './PubView'
 
 class Spoonlads extends React.Component {
 	state = {
@@ -116,10 +117,15 @@ class Spoonlads extends React.Component {
 			<main>
 				<Map
 					pubs={ pubs }
+					chosenPub={ chosenPub }
 					facilities={ facilities }
 					location={ location }
 					onPubClick={ this.setPub }
 					zoom={ location ? 12 : undefined } />
+				<PubView
+					pub={ chosenPub }
+					location={ location }
+					onClose={ () => this.setPub( null ) } />
 			</main>
 		)
 	}
