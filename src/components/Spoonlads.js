@@ -31,7 +31,7 @@ class Spoonlads extends React.Component {
 			const [ pubsResponse, facilitiesResponse ] = await Promise.all( [
 				fetch( '/data/pubs.json' ),
 				fetch( '/data/facilities.json' ),
-				timer( 100 )
+				timer( window.location.href.indexOf( 'localhost' ) === -1? 1500 : 100 )
 			] )
 
 			const pubs = flattenPubs( await pubsResponse.json() )
@@ -50,7 +50,7 @@ class Spoonlads extends React.Component {
 			} )
 		}
 
-		await timer( window.location.href.indexOf( 'localhost' ) === -1? 1500 : 100 )
+		await timer( 100 )
 
 		this.fetchLocation()
 	}
