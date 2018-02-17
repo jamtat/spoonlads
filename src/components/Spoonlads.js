@@ -50,7 +50,7 @@ class Spoonlads extends React.Component {
 			} )
 		}
 
-		await timer( 100 )
+		await timer( window.location.href.indexOf( 'localhost' ) === -1? 1500 : 100 )
 
 		this.fetchLocation()
 	}
