@@ -1,5 +1,5 @@
 import React from 'react'
-import { timer, flattenPubs } from '../lib/utils'
+import { timer, flattenPubs, composePubDetail } from '../lib/utils'
 
 import Loading from './Loading'
 import Map from './Map'
@@ -11,6 +11,7 @@ class Spoonlads extends React.Component {
 		error: null,
 		pubs: null,
 		facilities: null,
+		detail: null,
 		chosenPub: null,
 		location: null
 	}
@@ -28,18 +29,21 @@ class Spoonlads extends React.Component {
 
 	async fetchData() {
 		try {
-			const [ pubsResponse, facilitiesResponse ] = await Promise.all( [
+			const [ pubsResponse, facilitiesResponse, detailResponse ] = await Promise.all( [
 				fetch( '/data/pubs.json' ),
 				fetch( '/data/facilities.json' ),
+				fetch( '/data/pubs-detail.json' ),
 				timer( window.location.href.indexOf( 'localhost' ) === -1? 1500 : 100 )
 			] )
 
 			const pubs = flattenPubs( await pubsResponse.json() )
+			const detail = composePubDetail( await detailResponse.json() )
 			const facilities = await facilitiesResponse.json()
 
 			this.setState( {
 				pubs,
 				facilities,
+				detail,
 				loading: false
 			} )
 		} catch (err) {
@@ -89,6 +93,7 @@ class Spoonlads extends React.Component {
 			pubs,
 			facilities,
 			location,
+			detail,
 			chosenPub
 		} = this.state
 
@@ -125,6 +130,7 @@ class Spoonlads extends React.Component {
 				<PubView
 					pub={ chosenPub }
 					location={ location }
+					detail={ chosenPub ? detail[ chosenPub.id ]: null }
 					onClose={ () => this.setPub( null ) } />
 			</main>
 		)

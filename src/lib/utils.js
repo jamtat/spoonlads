@@ -15,6 +15,15 @@ export const flattenPubs = pubs => flatMap( pubs.regions, r => {
 	} )
 } )
 
+export const composePubDetail = detailList => {
+	const out = {}
+
+	detailList.filter( item => item.id )
+		.forEach( item => out[ item.id ] = item )
+
+	return out
+}
+
 export const computeDistanceToPub = ( location, pub ) => haversine( {
 	latitude: location.lat,
 	longitude: location.lng
