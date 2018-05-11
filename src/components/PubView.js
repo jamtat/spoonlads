@@ -17,7 +17,6 @@ const PubView = ( { pub, location, detail, onClose } ) => {
 	if ( !pub )
 		return null
 
-	const distance = computeDistanceToPub( location, pub )
 
 	const image = detail.images && detail.images[ 0 ]? detail.images[ 0 ]: ''
 
@@ -46,10 +45,24 @@ const PubView = ( { pub, location, detail, onClose } ) => {
 					openingTimes={ detail.openingTimes } />
 			</div>
 			<div className='pub-view-right'>
-				<div className='pub-view-distance'>
-					{ `${distance.toFixed(2)}km` }
-				</div>
+				<DistanceToPub
+					location={ location }
+					pub={ pub } />
 			</div>
+		</div>
+	)
+}
+
+const DistanceToPub = ( { location, pub } ) => {
+	if ( !location || !pub ) {
+		return null
+	}
+
+	const distance = computeDistanceToPub( location, pub )
+
+	return (
+		<div className='pub-view-distance'>
+			{ `${distance.toFixed(2)}km` }
 		</div>
 	)
 }
