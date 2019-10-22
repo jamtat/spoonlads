@@ -15,7 +15,7 @@
     "esformatter": "^0.10.0",
     "esformatter-jsx": "^7.4.0",
     "esformatter-quotes": "^1.1.0",
-    "eslint": "^4.17.0"
+    "eslint": "^4.18.2"
   },
   "scripts": {
     "start": "react-scripts start",
