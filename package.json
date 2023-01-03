@@ -9,7 +9,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-google-maps": "^9.4.5",
-    "react-scripts": "^1.1.1"
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "esformatter": "^0.10.0",
